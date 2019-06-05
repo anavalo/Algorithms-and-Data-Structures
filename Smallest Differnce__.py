@@ -50,6 +50,36 @@ def smallestDifference(arrayOne, arrayTwo):
     return smallestPair
 
 
+import sys
+
+def findSmallestDifference(A, B, m, n):
+    # Sort both arrays
+    # using sort function
+    A.sort()
+    B.sort()
+
+    a = 0
+    b = 0
+
+    # Initialize result as max value
+    result = sys.maxsize
+
+    # Scan Both Arrays upto
+    # sizeof of the Arrays
+    while (a < m and b < n):
+
+        if (abs(A[a] - B[b]) < result):
+            result = abs(A[a] - B[b])
+
+        # Move Smaller Value
+        if (A[a] < B[b]):
+            a += 1
+
+        else:
+            b += 1
+    # return final sma result
+    return result
+
 
 one = [-1, 5, 10, 20, 3]
 two = [26, 134, 135, 15, 17]
