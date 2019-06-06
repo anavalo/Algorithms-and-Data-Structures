@@ -4,7 +4,7 @@ and for the multiples of five print “Buzz”. For numbers which are multiples 
 num = 0
 for i in range(1, 100):
     num = i
-    if num % 3 == 0 and num % 5 == 0:
+    if num % 15 == 0:
         print('FizzBuzz')
     elif num % 5 ==0:
         print('Buzz')
