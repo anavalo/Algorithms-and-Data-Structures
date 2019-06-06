@@ -7,23 +7,4 @@ are either BST nodes themselves or None(null) values. The BST class should suppo
 values. The removal method should only remove the first instance of the target value.
 '''
 
-class BST:
-
-    def __init__(self, value):
-        self.value = value
-        self.left = None
-        self.right = None
-
-    def insert(selfself, value):
-
-
-        return self
-
-    def contains(self, value):
-
-
-
-    def remove(selfs, value):
-
-        return self
 
