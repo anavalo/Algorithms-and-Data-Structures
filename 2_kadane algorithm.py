@@ -1,3 +1,5 @@
+'''Write a function that takes in a non-empt array of integers and returns the max sum that can be obtained by summing
+up all the numbers in a non-empty subarray of the input array. A subarray must contain only adjacent numbers'''
 
 def kadanesAlgorithm(array):
     maxEnndingHere = array[0]
