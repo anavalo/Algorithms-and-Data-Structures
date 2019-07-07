@@ -1,27 +1,31 @@
-import math
-import random
-import itertools
+'''write a function that takes in an array of unique integers and returns an array of all permutations of those
+integers. If the input is empty, the function should return an empty array'''
 
 def getPermutations(array):
-    return  list(itertools.permutations(array))
+    permutations = []
+    permutationsHelper(array, [], permutations)
+    return permutations
 
-    # comb = [None] * (math.factorial(len(array)))
-    # times = int(math.factorial((len(array)))/len(array))
-    # current = array[:]
-
-
-
-
-
-
-
-
-
-
-
-
+def permutationsHelper(array, currentPermutation, permutations):
+    if not len(array) and len(currentPermutation):
+        permutations.append(currentPermutation)
+    else:
+        for i in range(len(array)):
+            newArray = array[:i] + array[i + 1:]
+            newPermutation = currentPermutation + [array[i]]
+            permutationsHelper(newArray, newPermutation, permutations)
 
 
 
 mmm = [1,2,3]
-print(getPermutations(mmm))
+
+
+
+print(mmm[1:])
+
+
+
+
+
+
+# print(getPermutations(mmm))
