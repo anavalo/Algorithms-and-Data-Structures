@@ -1,10 +1,10 @@
 '''write a function that takes in an array of unique integers and returns an array of all permutations of those
 integers. If the input is empty, the function should return an empty array'''
 
-# def getPermutations(array):
-#     permutations = []
-#     permutationsHelper(array, [], permutations)
-#     return permutations
+def getPermutations(array):
+    permutations = []
+    permutationsHelper(array, [], permutations)
+    return permutations
 
 def permutationsHelper(array, currentPermutation, permutations):
     if not len(array) and len(currentPermutation):
@@ -24,13 +24,6 @@ def permutationsHelper(array, currentPermutation, permutations):
 
 
 mmm = [1,2,3]
-permutations = []
-
-print(permutationsHelper(mmm, [], permutations))
 
 
-
-
-
-
-# print(getPermutations(mmm))
+print(getPermutations(mmm))
