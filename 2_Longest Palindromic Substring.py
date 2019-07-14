@@ -5,16 +5,26 @@ Assume that there will only be one longest palindromic substring.
 
 
 def longestPalindromicSubstring(string):
-    reverse = string[::-1]
-    palindrome = []
+    currentLongest=[0, 1]
+    for i in range(1, len(string)):
+        odd = getlongestpalindrome(string, i-1, i+1)
+        even = getlongestpalindrome(string, i-1, i)
+        longest = max(odd, even, key=lambda x: x[1] - x[0])
+        currentLongest = max(longest, currentLongest, key=lambda x: x[1] - x[0])
+    return string[currentLongest[0]:currentLongest[1]]
 
-    for i in range(len(string)):
-        for j in reversed(range(len(string)+1)):
-            if string[i:j] in reverse:
-                palindrome.append((string[i:j]))
-    return max(palindrome, key=len)
+def getlongestpalindrome(string, lidx, ridx):
+    while lidx>=0 and ridx<len(string):
+        if string[lidx] != string[ridx]:
+            break
+        lidx -=1
+        ridx +=1
+    return [lidx+1, ridx]
 
 
 
 
-print(longestPalindromicSubstring("banana"))
+
+
+
+print(longestPalindromicSubstring('tracecars'))
