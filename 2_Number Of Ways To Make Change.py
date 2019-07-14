@@ -1,20 +1,16 @@
 def numberOfWaysToMakeChange(n, denoms):
-    times = 0
-    zero = 0
-    for i in range(len(denoms)):
-        if n%denoms[i]==0:
-                times +=1
-                zero +=1
-        elif n%denoms[i] in denoms:
-                times +=1
-    if zero == 2:
-        times +=1
-    if sum(denoms) == n:
-        times +=1
-    return times
+    ways = [0 for i in range(n+1)]
+    ways[0] = 1
+    for denom in denoms:
+        for amount in range(1, n+1):
+            if denom <= amount:
+                ways[amount] += ways[amount-denom]
+    return ways[n]
 
 
 print(numberOfWaysToMakeChange(6, [1, 5]))
+
+
 
 
 
