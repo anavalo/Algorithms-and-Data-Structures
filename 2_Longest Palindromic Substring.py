@@ -22,9 +22,4 @@ def getlongestpalindrome(string, lidx, ridx):
     return [lidx+1, ridx]
 
 
-
-
-
-
-
 print(longestPalindromicSubstring('tracecars'))

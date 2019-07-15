@@ -19,5 +19,5 @@ def helper(array, currentset, powersets):
         helper(newarray, newpowerset, powersets)
 
 
-mmm = [1,2,3]
+mmm = [1,2,3,5,6]
 print(powerset(mmm))
