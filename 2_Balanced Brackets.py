@@ -16,8 +16,7 @@ def helper(string):
     newstring = ''
     for char in string:
         if char in dict:
-            newstring = string.replace(char, '').replace(dict[char], '', 1)
-            print(newstring)
+            newstring = string.replace(char, '', 1).replace(dict[char], '', 1)
             helper(newstring)
     return newstring
 
@@ -27,4 +26,4 @@ def balancedBrackets(string):
 
 
 
-print(balancedBrackets('()[]{}]'))
+print(balancedBrackets('()[]{}{'))
