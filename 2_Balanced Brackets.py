@@ -6,21 +6,25 @@ Note that a closing bracket cannot match a corresponding opening bracket that co
 Similarly, brackets cannot overlap each other as in "[(])".'''
 
 
-def balancedBrackets(string):
-    dict = {'(':')',
-            '[':']',
-            '{':'}'}
-    open = ['(','[','{']
+
+
+
+def helper(string):
+    dict = {'(': ')',
+            '[': ']',
+            '{': '}'}
+    newstring = ''
     for char in string:
-        if char in open:
-            if (string.index(char) - string.index(dict[char])) % 2 != 0:
-                newstring = string.replace(char, "")
-                final = newstring.replace(dict[char], "")
-                balancedBrackets(final)
-    return string
+        if char in dict:
+            newstring = string.replace(char, '').replace(dict[char], '', 1)
+            print(newstring)
+            helper(newstring)
+    return newstring
+
+def balancedBrackets(string):
+    return helper(string)
 
 
 
 
-
-print(balancedBrackets('(())'))
+print(balancedBrackets('()[]{}]'))
