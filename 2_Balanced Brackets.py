@@ -10,15 +10,17 @@ def balancedBrackets(string):
     dict = {'(':')',
             '[':']',
             '{':'}'}
-    for k, v in dict.items():
-        for char in string:
-            if string.index(k)%string.index(v)!=2:
-                return True
-            else:
-                return False
+    open = ['(','[','{']
+    for char in string:
+        if char in open:
+            if (string.index(char) - string.index(dict[char])) % 2 != 0:
+                newstring = string.replace(char, "")
+                final = newstring.replace(dict[char], "")
+                balancedBrackets(final)
+    return string
 
 
 
 
 
-print(balancedBrackets('(){}'))
+print(balancedBrackets('(())'))
