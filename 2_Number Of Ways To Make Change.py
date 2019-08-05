@@ -8,7 +8,7 @@ def numberOfWaysToMakeChange(n, denoms):
     return ways[n]
 
 
-print(numberOfWaysToMakeChange(6, [1, 5]))
+print(numberOfWaysToMakeChange(7, [1, 5]))
 
 
 
