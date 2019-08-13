@@ -30,5 +30,19 @@ def helper(array, startIdx, endIdx):
 def swap(i, j, array):
     array[i], array[j] = array[j], array[i]
 
-mmmm = [3, 5, 12, 3, 4, 4, 7, 3, 8, 7, 8, 6, 10, 9, 4]
-print(quicksort(mmmm))
+
+def quicksort2(array):
+    if len(array)<2:
+        return array
+    else:
+        pivot = array[0]
+        print('pivot is: ' + str(pivot))
+        lesser = [x for x in array[1:] if x <= pivot]
+        print('lesser is: ' + str(lesser))
+        greater = [x for x in array[1:] if x > pivot]
+        print ('greater is:' + str(greater))
+    return quicksort2(lesser) + [pivot] + quicksort2(greater)
+
+mmmm = [4, 7, 3, 1, 9, 5, 2, 8]
+
+print(quicksort2(mmmm))
