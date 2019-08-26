@@ -24,18 +24,20 @@ class LinkedList:
         if temp.value == key:
             self.head = temp.next
             temp = None
-            return "deleted head " + str(key) + " from list"
+            return
 
-        while temp.value != key:
+        while temp is not None:
+            if temp.value == key:
+                break
             prev = temp
             temp = temp.next
 
+
         if temp is None:
-            return "no match"
+            return print('fuck off there is no such number')
 
         prev.next = temp.next
         temp = None
-        return "deleted " + str(key) + "from list"
 
     def printList(self):
         temp = self.head
@@ -44,15 +46,15 @@ class LinkedList:
             temp = temp.next
 
 
+
 llist = LinkedList()
 llist.push(7)
 llist.push(1)
 llist.push(3)
 llist.push(2)
 llist.printList()
-llist.remove(5)
-print('-------------')
-llist.printList()
+llist.remove(12)
+
 
 
 
