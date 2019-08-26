@@ -83,6 +83,8 @@ class BST:
             currentNode = currentNode.left
         return currentNode.value
 
+aaa = BST(10)
+aaa.insert(5)
 
 
 
