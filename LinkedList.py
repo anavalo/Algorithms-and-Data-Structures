@@ -45,6 +45,16 @@ class LinkedList:
             print(" %d" % (temp.value)),
             temp = temp.next
 
+    def reverse(self):
+        current = self.head
+        nextNode = None
+        previous = None
+        while current:
+            nextNode = current.next
+            current.next = previous
+            previous = current
+            current = nextNode
+
 
 
 llist = LinkedList()
@@ -53,7 +63,9 @@ llist.push(1)
 llist.push(3)
 llist.push(2)
 llist.printList()
-llist.remove(12)
+llist.reverse()
+llist.printList()
+
 
 
 
