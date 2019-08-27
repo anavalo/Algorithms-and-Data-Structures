@@ -34,7 +34,7 @@ class LinkedList:
 
 
         if temp is None:
-            return print('fuck off there is no such number')
+            return print('there is no such number')
 
         prev.next = temp.next
         temp = None
