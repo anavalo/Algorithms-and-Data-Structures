@@ -42,7 +42,7 @@ class LinkedList:
     def printList(self):
         temp = self.head
         while temp:
-            print(" %d" % (temp.value)),
+            print("%d" % (temp.value)),
             temp = temp.next
 
     def reverse(self):
@@ -54,20 +54,33 @@ class LinkedList:
             current.next = previous
             previous = current
             current = nextNode
+        self.head = previous
 
+    def removeKthNodeFromEnd(self, k):
+        prev = node = temp = self.head
+        i = 0
+        while node:
+            node = node.next
+            i += 1
+        node = self.head
+        position = i - k
+        if position == 0:
+            node = node.next
+        else:
+            j = 0
+            while temp:
+                if j == position:
+                    break
+                j += 1
+                prev = temp
+                temp = temp.next
+            prev.next = prev.next.next
 
 
 llist = LinkedList()
-llist.push(7)
-llist.push(1)
+llist.push(4)
 llist.push(3)
 llist.push(2)
+llist.push(1)
+llist.removeKthNodeFromEnd(3)
 llist.printList()
-llist.reverse()
-llist.printList()
-
-
-
-
-
-
