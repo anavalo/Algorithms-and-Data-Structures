@@ -1,7 +1,6 @@
 from Node import Node
 
 
-
 class LinkedList:
     def __init__(self):
         self.head = None
@@ -57,24 +56,22 @@ class LinkedList:
         self.head = previous
 
     def removeKthNodeFromEnd(self, k):
-        prev = node = temp = self.head
-        i = 0
-        while node:
-            node = node.next
-            i += 1
-        node = self.head
-        position = i - k
-        if position == 0:
-            node = node.next
-        else:
-            j = 0
-            while temp:
-                if j == position:
-                    break
-                j += 1
-                prev = temp
-                temp = temp.next
-            prev.next = prev.next.next
+        frontnode = self.head
+        endnode = self.head
+        counter = 1
+        while counter <= k:
+            frontnode = frontnode.next
+            counter +=1
+        if frontnode is None:
+            endnode.value = endnode.value.next
+            endnode.next = endnode.next.next
+            return
+        while frontnode is not None:
+            temp = endnode
+            endnode = endnode.next
+            frontnode = frontnode.next
+        temp.next = temp.next.next
+
 
 
 llist = LinkedList()
@@ -82,5 +79,5 @@ llist.push(4)
 llist.push(3)
 llist.push(2)
 llist.push(1)
-llist.removeKthNodeFromEnd(3)
+llist.removeKthNodeFromEnd(4)
 llist.printList()
