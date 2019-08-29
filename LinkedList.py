@@ -72,26 +72,21 @@ class LinkedList:
             frontnode = frontnode.next
         temp.next = temp.next.next
 
-    def create_cycle(self):
+    def _create_cycle(self):
         node = self.head
-        startingofcycle = node.next.next.next.next
-        temp = node.next.next
         node.next.next.next.next = node.next.next
-
-
 
     def has_cycle(self):
         hash = {}
         node = self.head
         while node:
-            if node.next in hash:
-                cycle_node = node
-                return cycle_node
-            else:
+            if node.next not in hash:
                 hash[node.value] = node.next
-            node = node.next
-        print(hash)
-        return False
+                prev = node
+                node = node.next
+            else:
+                break
+        return print(node.value)
 
 
 llist = LinkedList()
@@ -103,6 +98,6 @@ llist.push(3)
 llist.push(2)
 llist.push(1)
 # llist.removeKthNodeFromEnd(4)
-llist.create_cycle()
-llist.printList()
-# llist.has_cycle()
+llist._create_cycle()
+# llist.printList()
+llist.has_cycle()
