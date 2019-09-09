@@ -6,28 +6,27 @@ def subarraySort(array):
     minOutOfORder = float("inf")
     maxOutOFOrder = float("-inf")
     for i, j in enumerate(array):
-        num = array[i]
-        if isOutOfOrder(i, num, array):
-            minOutOfORder = min(num, minOutOfORder)
-            maxOutOFOrder = max(num, maxOutOFOrder)
+        if isOutOfOrder(i, j, array):
+            minOutOfORder = min(j, minOutOfORder)
+            maxOutOFOrder = max(j, maxOutOFOrder)
     if minOutOfORder == ("inf"):
         return [-1, -1]
     subarraylidx = 0
     while minOutOfORder >= array[subarraylidx]:
         subarraylidx +=1
     subarrayridx = len(array) -1
-    while subarrayridx <= array[subarrayridx]:
+    while maxOutOFOrder <= array[subarrayridx]:
         subarrayridx -= 1
     return [subarraylidx, subarrayridx]
 
 
-def isOutOfOrder(i, num, array):
+def isOutOfOrder(i, j, array):
     if i == 0:
-        return num > array[i+1]
+        return j > array[i+1]
     if i == len(array) -1:
-        return num < array[i-1]
+        return j < array[i-1]
     else:
-        return num < array[i-1] or num > array[i+1]
+        return j < array[i-1] or j > array[i+1]
 
 
 bbbb = [1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19]
