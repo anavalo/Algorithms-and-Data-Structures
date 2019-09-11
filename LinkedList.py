@@ -1,4 +1,5 @@
 from Node import Node
+from collections import defaultdict
 
 
 class LinkedList:
@@ -77,16 +78,12 @@ class LinkedList:
         node.next.next.next.next = node.next.next
 
     def has_cycle(self):
-        hash = {}
+        hash = defaultdict(int)
         node = self.head
         while node:
-            if node.next not in hash:
-                hash[node.value] = node.next
-                prev = node
-                node = node.next
-            else:
-                break
-        return print(node.value)
+            hash[node.next]
+        print(hash)
+
 
 
 llist = LinkedList()
