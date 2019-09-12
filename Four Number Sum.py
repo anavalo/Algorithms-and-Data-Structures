@@ -1,10 +1,19 @@
-'''
-Write a function that takes in a non-empty array of distinct integers and an integer representing a target sum.
-The function should find all quadruplets in the array that sum up to the target sum and return a two-dimensional array
-of all these quadruplets in no particular order. If no four numbers sum up to the target sum, the function should return
- an empty array.
-'''
+def fourNumberSum(array, targetSum):
+    pairsums = {}
+    quadriplets = []
+    for i in range(0, len(array)-1):
+        for j in range(i+1, len(array)):
+            if not (array[i] + array[j]) in pairsums:
+                pairsums[(array[i] + array[j])] = [[array[i], array[j]]]
+            else:
+                pairsums[(array[i] + array[j])].append([array[i], array[j]])
+    for key, value in pairsums.items():
+        result = targetSum - key
+        if result in pairsums:
+            quadriplets.append([pairsums[key], pairsums[result]])
+    return quadriplets
 
 
 
-print(fournumberSum([7,3,3,2,2 ,-1,1,2], 16))
+print(fourNumberSum([7, 6, 4, -1, 1, 2], 16))
+

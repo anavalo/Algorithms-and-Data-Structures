@@ -1,4 +1,5 @@
 from Node import Node
+from collections import defaultdict
 
 
 class LinkedList:
@@ -72,12 +73,28 @@ class LinkedList:
             frontnode = frontnode.next
         temp.next = temp.next.next
 
+    def _create_cycle(self):
+        node = self.head
+        node.next.next.next.next = node.next.next
+
+    def has_cycle(self):
+        hash = defaultdict(int)
+        node = self.head
+        while node:
+            hash[node.next]
+        print(hash)
+
 
 
 llist = LinkedList()
+llist.push(7)
+llist.push(6)
+llist.push(5)
 llist.push(4)
 llist.push(3)
 llist.push(2)
 llist.push(1)
-llist.removeKthNodeFromEnd(4)
-llist.printList()
+# llist.removeKthNodeFromEnd(4)
+llist._create_cycle()
+# llist.printList()
+llist.has_cycle()
