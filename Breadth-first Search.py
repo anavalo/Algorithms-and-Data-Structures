@@ -15,13 +15,14 @@ class Node:
         return self
 
     def breadthFirstSearch(self, array):
-        child = self.children
-        hash = {}
-        for i in range(len(child)):
-            hash[child[i]] = self.name
 
 
-test1 = Node('A')
-test1.addChild('B').addChild('C')
-test1.children[0].addChild('D')
 
+
+test4 = Node("A")
+test4.addChild("B").addChild("C").addChild("D")
+test4.children[0].addChild("E").addChild("F")
+test4.children[2].addChild("G").addChild("H")
+test4.children[0].children[1].addChild("I").addChild("J")
+test4.children[2].children[0].addChild("K")
+print(test4.breadthFirstSearch([]))
