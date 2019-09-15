@@ -4,6 +4,7 @@ simple tree-like structure. Implement the breadthFirstSearch method on the Node 
  traverses the tree using the Breadth-first Search approach (specifically navigating the tree from left to right),
  stores all of the Nodes' names in the input array, and returns it.
 '''
+from collections import deque
 
 class Node:
     def __init__(self, name):
@@ -15,6 +16,16 @@ class Node:
         return self
 
     def breadthFirstSearch(self, array):
+        current = self.name
+        que = deque()
+        que.append(current)
+        while que:
+            que.append(current.children)
+            x = que.popleft()
+            array.append(x)
+            que.append(x.children)
+            current = que[0]
+        return array
 
 
 
