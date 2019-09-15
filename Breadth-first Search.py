@@ -20,7 +20,7 @@ class Node:
         que = deque()
         que.append(current)
         while que:
-            que.append(current.children)
+            que.append(self.children)
             x = que.popleft()
             array.append(x)
             que.append(x.children)
