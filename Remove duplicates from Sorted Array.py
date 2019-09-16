@@ -11,10 +11,9 @@ class Solution(object):
         while right <= len(nums)-1:
             if nums[left] == nums[right]:
                 nums.pop(right)
-            if nums[left] != nums[right]:
+            else:
                 left += 1
                 right += 1
-            print(nums)
         return nums
 
 
@@ -24,4 +23,4 @@ class Solution(object):
 
 
 test = Solution()
-print(test.removeDuplicates([1, 1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 6, 6]))
+print(test.removeDuplicates([1, 1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 6, 6, 7, 7]))
