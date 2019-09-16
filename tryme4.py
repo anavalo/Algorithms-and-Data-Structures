@@ -8,14 +8,14 @@ def three_lines():
     new_line()
 
 
-# printing 9 lines
+# function for printing 9 lines
 def nine_lines():
     three_lines()
     three_lines()
     three_lines()
 
 
-# printing 25 lines
+# function for printing 25 lines
 def clear_screen():
      nine_lines()
      nine_lines()
@@ -23,5 +23,7 @@ def clear_screen():
      three_lines()
      new_line()
 
+print('Printing nine lines:')
 nine_lines()
+print('Printing twentyfive lines:')
 clear_screen()

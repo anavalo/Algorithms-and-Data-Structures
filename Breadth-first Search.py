@@ -18,13 +18,15 @@ class Node:
     def breadthFirstSearch(self, array):
         current = self.name
         que = deque()
-        que.append(current)
+        array.append(current)
+        for i in self.children:
+            que.append(i)
         while que:
-            que.append(self.children)
             x = que.popleft()
-            array.append(x)
-            que.append(x.children)
-            current = que[0]
+            array.append(x.name)
+            if x.children:
+                for i in x.children:
+                    que.append(i)
         return array
 
 
