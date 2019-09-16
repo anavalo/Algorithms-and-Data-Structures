@@ -31,8 +31,8 @@ def spiral(array):
     newar = numpy.array(array)[1:-1, 1:-1]
     return result[:-1] + spiral(newar.tolist())
 
-matrix = [[1, 2, 3, 4, 5, 6],
-          [6, 7, 8, 9, 15, 16],
-          [10, 11, 12, 13, 99, 46],
-          [10, 11, 12, 13, 99, 46]]
+matrix = [[1, 2, 3, 4],
+          [5, 6, 7, 8],
+          [9, 10, 11, 12]]
+
 print(spiral(matrix))
