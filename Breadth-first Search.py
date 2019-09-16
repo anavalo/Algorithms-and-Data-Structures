@@ -15,10 +15,9 @@ class Node:
         self.children.append(Node(name))
         return self
 
-    def breadthFirstSearch(self, array):
-        current = self.name
+    def breadthFirstSearch(self, array): #return array in BFS form
         que = deque()
-        array.append(current)
+        array.append(self.name)
         for i in self.children:
             que.append(i)
         while que:
