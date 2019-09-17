@@ -16,10 +16,6 @@ def productSum(array, multiplier = 1):
 
 
 
-
-
-
-
 bbb= [[[[[[5]]]]]]
 
 print(productSum([5, 2, [7, -1], 3, [6, [-13, 8], 4]]))
