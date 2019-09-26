@@ -28,4 +28,4 @@ def balancedBrackets(string):
 
 
 
-print(balancedBrackets('(())'))
+print(balancedBrackets('([)]'))
