@@ -32,3 +32,4 @@ def chainedWords(array):
 
 
 print (chainedWords(['apple', 'eggs', 'snack', 'karat', 'tuna']))
+print (chainedWords(['apple', 'eggs', 'snack', 'karat', 'buna']))
