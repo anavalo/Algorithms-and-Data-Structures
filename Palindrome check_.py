@@ -11,3 +11,9 @@ def isPalindrome(string):
         leftindex += 1
         rightindex -=1
     return True
+
+#recursivly:
+
+def palindrome(string, i=0):
+    j = len(string)-i-1
+    return True if i>=j else string[i]==string[j] and palindrome(string, i+1)
