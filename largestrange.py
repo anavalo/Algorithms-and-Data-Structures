@@ -29,5 +29,34 @@ def largestrange(array):
         lastkey = sorted(hashtable.keys())[-1]
         return [array[hashtable[lastkey][0]], array[hashtable[lastkey][1]]]
 
+# O(n) time + space:
+
+def largestRange(array):
+    hash={}
+    result = []
+    longestLenght = 0
+    for num in array:
+        hash[num] = True
+    for num in array:
+        if not hash[num]:
+            continue
+        hash[num] = False
+        currentLenght = 1
+        left = num - 1
+        right = num + 1
+        while left in hash:
+            hash[left] = False
+            currentLenght +=1
+            left -=1
+        while right in hash:
+            hash[right] = False
+            currentLenght +=1
+            right +=1
+        if currentLenght > longestLenght:
+            longestLenght = currentLenght
+            result = [left+1, right-1]
+    return result
+
 
 print(largestrange([19, -1, 18, 17, 2, 10, 3, 12, 5, 16, 4, 11, 8, 7, 6, 15, 12, 12, 2, 1, 6, 13, 14]))
+print(largestRange([19, -1, 18, 17, 2, 10, 3, 12, 5, 16, 4, 11, 8, 7, 6, 15, 12, 12, 2, 1, 6, 13, 14]))
