@@ -46,11 +46,11 @@ def largestRange(array):
         right = num + 1
         while left in hash:
             hash[left] = False
-            currentLenght +=1
+            currentLenght += 1
             left -=1
         while right in hash:
             hash[right] = False
-            currentLenght +=1
+            currentLenght += 1
             right +=1
         if currentLenght > longestLenght:
             longestLenght = currentLenght
