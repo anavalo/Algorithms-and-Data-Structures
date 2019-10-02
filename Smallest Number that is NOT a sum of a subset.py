@@ -24,6 +24,16 @@ def isSum(array, target):
     return isSum(array[:-1], target-array[len(array)-1])
 
 
+# result will always be +1 of the smallest sum
+def findSmallest(nums):
+    res = 1
+    for n in nums:
+        if n <= res:
+            res += n
+        else:
+            break
+    return res
 
 
+print(findSmallest([1, 2, 3, 8, 9, 10]))
 print(findSmallest2([1, 2, 3, 8, 9, 10]))
