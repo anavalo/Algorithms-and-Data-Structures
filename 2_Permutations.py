@@ -11,14 +11,8 @@ def permutationsHelper(array, currentPermutation, permutations):
         permutations.append(currentPermutation)
     else:
         for i in range(len(array)):
-            print('i is: ' + str(i))
-
             newArray = array[:i] + array[i + 1:]
-            print('newArray is: ' + str(newArray))
-
             newPermutation = currentPermutation + [array[i]]
-            print('newPermutations is: ' + str(newPermutation) + '\n')
-
             permutationsHelper(newArray, newPermutation, permutations)
 
 
